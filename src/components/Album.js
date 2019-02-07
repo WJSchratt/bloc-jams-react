@@ -81,7 +81,7 @@ class Album extends Component {
 
      handleForwClick() {
        const currentNewIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-       const newerIndex = Math.max(5, currentNewIndex + 1);
+       const newerIndex = Math.min(4, currentNewIndex + 1);
        const skipSong = this.state.album.songs[newerIndex];
        this.setSong(skipSong);
        this.play();
