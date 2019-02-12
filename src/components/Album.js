@@ -131,8 +131,7 @@ class Album extends Component {
 
   formatTime(time) {
     const displayTime = Math.floor(time / 60)+':'+Math.floor(time % 60);
-    this.setState({ currentTime : displayTime });
-    console.log('hey');
+    return displayTime;
   }
 
    render() {
@@ -177,7 +176,7 @@ class Album extends Component {
            handleForwClick={() => this.handleForwClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
-           formatTime={() => this.formatTime}
+           formatTime={() => this.formatTime()}
          />
 
        </section>
