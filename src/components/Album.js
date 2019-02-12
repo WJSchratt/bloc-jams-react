@@ -128,8 +128,9 @@ class Album extends Component {
      this.setState({ currentVolume : newVolume });
    }
 
-  formatTime() {
-    const newTime = 
+  formatTime(time) {
+    const displayTime = this.Math.floor(time / 60)+':'+Math.floor(time % 60);
+    this.setState({ currentTime : displayTime });
   }
 
 
@@ -168,7 +169,7 @@ class Album extends Component {
          <PlayerBar
            isPlaying={this.state.isPlaying}
            currentSong={this.state.currentSong}
-           currentTime={this.audioElement.currentTime}
+           currentTime={() => this.formatTime(this.audioElement.currentTime)}
            duration={this.audioElement.duration}
            currentVolume={this.audioElement.volume}
            handleSongClick={() => this.handleSongClick(this.state.currentSong)}
