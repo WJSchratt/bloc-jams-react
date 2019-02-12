@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 class PlayerBar extends Component {
   render() {
-    console.log(`current volume: ${this.props.currentVolume}`)
-
     return (
       <section className="player-bar">
       <section id="buttons">

@@ -23,6 +23,7 @@ class Album extends Component {
        this.audioElement.src = album.songs[0].audioSrc;
      }
 
+
       componentDidMount() {
         this.eventListeners = {
          timeupdate: e => {
@@ -131,6 +132,7 @@ class Album extends Component {
   formatTime(time) {
     const displayTime = Math.floor(time / 60)+':'+Math.floor(time % 60);
     this.setState({ currentTime : displayTime });
+    console.log('hey');
   }
 
    render() {
@@ -175,7 +177,7 @@ class Album extends Component {
            handleForwClick={() => this.handleForwClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
-           formatTime={() => this.formatTime()}
+           formatTime={() => this.formatTime}
          />
 
        </section>
