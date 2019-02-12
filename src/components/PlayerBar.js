@@ -18,11 +18,11 @@ class PlayerBar extends Component {
           </button>
         </section>
         <section id="time-control">
-        <div className="current-time">{this.props.currentTime}</div>
+        <div className="current-time">{this.props.formatTime(this.currentTime)}</div>
          <input
            type="range"
            className="seek-bar"
-           value={(this.props.currentTime / this.props.duration) || 0}
+           value={(this.props.formatTime(this.currentTime) / this.props.duration) || 0}
            max="1"
            min="0"
            step="0.01"

@@ -133,9 +133,7 @@ class Album extends Component {
     this.setState({ currentTime : displayTime });
   }
 
-
    render() {
-     console.log(this.state.duration)
      return (
        <section className="album">
          {this.props.match.params.slug} Album will go here
@@ -169,7 +167,7 @@ class Album extends Component {
          <PlayerBar
            isPlaying={this.state.isPlaying}
            currentSong={this.state.currentSong}
-           currentTime={() => this.formatTime(this.currentTime)}
+           currentTime={this.state.currentTime}
            duration={this.audioElement.duration}
            currentVolume={this.audioElement.volume}
            handleSongClick={() => this.handleSongClick(this.state.currentSong)}
@@ -177,6 +175,7 @@ class Album extends Component {
            handleForwClick={() => this.handleForwClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
+           formatTime={() => this.formatTime()}
          />
 
        </section>
