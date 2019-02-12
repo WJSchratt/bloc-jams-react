@@ -129,7 +129,7 @@ class Album extends Component {
    }
 
   formatTime() {
-    console.log(this.audioElement.currentTime);
+    const newTime = 
   }
 
 
