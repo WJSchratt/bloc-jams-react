@@ -129,7 +129,7 @@ class Album extends Component {
    }
 
   formatTime(time) {
-    const displayTime = this.Math.floor(time / 60)+':'+Math.floor(time % 60);
+    const displayTime = Math.floor(time / 60)+':'+Math.floor(time % 60);
     this.setState({ currentTime : displayTime });
   }
 
