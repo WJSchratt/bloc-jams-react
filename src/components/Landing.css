@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+.landing {
+  color: red;
+
+}
+
+.point-title {
+      color: red;
+      font-family: 'Righteous', cursive;
+      text-align: center;
+
+
+}
+
+.point-description {
+      font-family: 'Inconsolata', monospace;
+      color : grey;
+      font-size: 14pt;
+      text-align: center;
+
+}

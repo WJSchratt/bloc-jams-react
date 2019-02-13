@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+.album-title {
+    color: red;
+    font-family: 'Righteous', cursive;
+}
