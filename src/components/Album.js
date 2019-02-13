@@ -132,6 +132,15 @@ class Album extends Component {
   formatTime(time) {
     const displayTime = Math.floor(time / 60)+':'+Math.floor(time % 60);
     return displayTime;
+    if (isNaN(displayTime)) {
+        return "-:--"
+    }
+  }
+
+  formatDuration(time) {
+    const displayDuration = Math.floor(time / 60)+':'+Math.floor(time % 60);
+    return displayDuration;
+
   }
 
    render() {
@@ -176,7 +185,8 @@ class Album extends Component {
            handleForwClick={() => this.handleForwClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
-           formatTime={() => this.formatTime()}
+           formatTime={() => this.formatTime(this.state.currentTime)}
+           formatDuration={() => this.formatDuration(this.audioElement.duration)}
          />
 
        </section>
