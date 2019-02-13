@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+.App {
+  font-family: 'Ubuntu', sans-serif;
+  color: grey;
+  text-align: center;
+}
+
+#link1 {
+  color: pink;
+  font-size: 14pt;
+}
+
+.jams-header {
+  color:FireBrick;
+  padding: 20px;
+}

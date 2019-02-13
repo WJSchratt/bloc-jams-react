@@ -2,16 +2,20 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 .landing {
-  color: red;
+      color: grey;
+      margin: auto;
+      width: 100%;
+      padding: 20px;
 
 }
 
+.hero-title {
+      padding: 40px;
+}
 .point-title {
-      color: red;
+      color: FireBrick;
       font-family: 'Righteous', cursive;
       text-align: center;
-
-
 }
 
 .point-description {

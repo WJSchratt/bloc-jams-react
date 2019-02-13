@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
-import './Album.css';
+import stylesheet from './Album.css';
 
 
 class Album extends Component {
@@ -133,11 +133,9 @@ class Album extends Component {
 
   formatTime(time) {
     const displayTime = Math.floor(time / 60)+':'+Math.floor(time % 60);
-    if (isNaN(time)) {
-        return "-:--";
-      }
-     else {
     return displayTime;
+    if (isNaN(displayTime)) {
+        return "-:--"
     }
   }
 
@@ -150,6 +148,7 @@ class Album extends Component {
    render() {
      return (
        <section className="album">
+         {this.props.match.params.slug} Album will go here
          <section id="album-info">
            <img id="album-cover-art" />
            <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
@@ -159,7 +158,7 @@ class Album extends Component {
            <div id="release-info">{this.state.album.releaseInfo}</div>
            </div>
          </section>
-         <table className="table table-dark">
+         <table id="song-list">
           <colgroup>
             <col id="song-number-column"/>
             <col id="song-title-column"/>
