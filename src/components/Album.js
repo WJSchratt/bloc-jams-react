@@ -15,7 +15,7 @@ class Album extends Component {
        this.state = {
          album: album,
          currentSong: album.songs[0],
-         currentTime: 0,
+         currentTime: "k",
          duration: album.songs[0].duration,
          currentVolume: 0.2,
          isPlaying: false
@@ -132,17 +132,22 @@ class Album extends Component {
    }
 
   formatTime(time) {
-    const displayTime = Math.floor(time / 60)+':'+Math.floor(time % 60);
-    if (isNaN(time)) {
-        return "-:--";
-      }
-     else {
+    if (time > 10){
+    const displayTime = + Math.floor(time / 60)+':'+Math.floor(time % 60);
     return displayTime;
+  }
+    if (isNaN(time)){
+    return "-:--";
+  }
+    else {
+      const correctionTime = + Math.floor(time / 60)+':'+ 0 +Math.floor(time % 60);
+      return correctionTime;
     }
   }
 
   formatDuration(time) {
-    const displayDuration = Math.floor(time / 60)+':'+Math.floor(time % 60);
+    const displayDuration =  Math.floor(time / 60)+':'+Math.floor(time % 60);
+
     return displayDuration;
 
   }
@@ -171,7 +176,7 @@ class Album extends Component {
                    <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter = {() => this.hover(song)} onMouseLeave = {() => this.unHover(song)}>
                     <td>{this.songButtons(song, index)}</td>
                     <td className="song-titles">{song.title}</td>
-                    <td className="song-duration">{song.duration} sec</td>
+                    <td className="song-duration">{this.formatTime(song.duration)}</td>
                   </tr>
                 )
               }
